@@ -1,0 +1,13 @@
+.intro {
+  height: 100vh;
+}
+
+.transaction{
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+}
+
+.user{
+  height: 100%;
+}
