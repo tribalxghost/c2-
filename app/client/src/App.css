@@ -11,3 +11,10 @@
 .user{
   height: 100%;
 }
+
+
+.piggySign{
+  top: 120px;
+  right: 230px;
+  position: absolute;
+}

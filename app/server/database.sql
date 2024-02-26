@@ -40,3 +40,12 @@ CREATE TABLE goals (
     username text NOT NULL REFERENCES users(username) ON DELETE CASCADE,
     goal DECIMAL 
 );
+
+
+
+CREATE TABLE plaidApi (
+    username text Primary,
+    access_token text,
+    financial_institution text
+
+)

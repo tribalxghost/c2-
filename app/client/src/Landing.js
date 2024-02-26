@@ -6,7 +6,7 @@ function Landing() {
         <div className='text-center  p-3 '>
                 <img src={pig} className="figure-img img-fluid text-center  w-50 p-3 pig mb-1" alt="pig logo"></img>
                 <br></br>
-                <a href='/register' className='btn btn-primary text-center text-white text-decoration-none'>Sign up here</a>
+                <a href='/register' className='btn btn-primary text-center text-white text-decoration-none sgn-btn'>Sign up here</a>
            
         </div>
     )

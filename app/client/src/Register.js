@@ -32,7 +32,7 @@ function Register({sendData}) {
 
           function submitForm(event){
               event.preventDefault()
-              
+              localStorage.clear()
               localStorage.setItem("username",formData.username)
               sendData(formData,params )
               navigate("/addgoal");

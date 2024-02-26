@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-function Login({sendData}) {
+function Login({login}) {
 
 let INITIAL = {
     username: "",
@@ -28,8 +28,7 @@ let INITIAL = {
 
           function submitForm(event){
               event.preventDefault()
-              
-              return sendData(formData,params )
+              login(formData)
 
           }
         

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-function AddTransaction({ addTransaction, toggle, setTrans }) {
+function AddTransaction({ addTransaction, toggle, setTrans, reRenderPage }) {
     let navigate = useNavigate()
     let INITIAL = {
         username: localStorage.getItem("username"),
@@ -31,6 +31,7 @@ function AddTransaction({ addTransaction, toggle, setTrans }) {
         toggle()
         addTransaction(formData, params)
         setTrans(formData)
+        reRenderPage()
         navigate("/user")
 
 
@@ -57,8 +58,7 @@ function AddTransaction({ addTransaction, toggle, setTrans }) {
                                         <i className="fas fa-user-astronaut fa-3x my-5"></i>
 
                                         <div className="form-outline mb-2">
-
-                                            <input name="description" type="input" id="form6Example6" className="form-control form-control-lg" autoComplete="description" placeholder="Description" />
+                                            <input name="description" type="firstName" id="description" className="form-control form-control-lg" autoComplete="description" placeholder="Description" />
                                         </div>
 
                                         <div className="form-outline mb-2">
