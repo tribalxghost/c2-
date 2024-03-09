@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
+
 
 
 let INITIAL = {
@@ -10,13 +13,45 @@ let INITIAL = {
 
 }
 
+let username = localStorage.getItem("username")
+let token = localStorage.getItem("token")
 
-function AddGoal({ addAccount }) {
+
+
+
+
+function AddGoal({ addAccount, port }) {
+ 
   let navigate = useNavigate()
   const [formData, setFormData] = useState(INITIAL);
+  let [loggedIn, setLogin] = useState(false)
+  let [tog, toggle] = useState(false)
   let params = "addgoal"
 
 
+  async function Check(username, token){
+    
+    let result = await axios.post(`http://localhost:${port}/check`, {data:{"username": username, "token":token}}).then(res => {return res.data.data})
+  console.log(result)
+    if(result){
+    setLogin(true)
+  } else {
+    setLogin(false)
+  }
+  return result
+}
+
+
+useEffect(()=>{
+  
+
+    console.log(username, token)
+    Check(username, token)
+
+},[tog])
+
+
+  
 
   const handleChange = evt => {
 
@@ -29,9 +64,14 @@ function AddGoal({ addAccount }) {
 
   function submitForm(event) {
     event.preventDefault()
-    formData.username = localStorage.getItem("username")
-    addAccount(formData, params)
-    navigate("/user")
+    Check()
+    if(loggedIn){
+      addAccount(formData, params)
+
+    }else {
+      navigate("/login")
+    }
+
 
   }
 

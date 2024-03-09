@@ -152,6 +152,57 @@ class User {
     }
 
 
+    static async plaidApiToken(username, access_token){
+        const result = await db.query(`
+        INSERT INTO plaidapitokens(username, access_token)
+        VALUES ($1, $2)
+        `,[username, access_token])
+    }
+
+    static async plaidCheck(username){
+        const result = await db.query(`
+        SELECT * FROM plaidapitokens WHERE username = $1
+        `, [username])
+
+        if (result) {
+            return result
+        } else {
+            return null
+        }
+    }
+
+
+
+
+    static async addPlaidTransactions( transaction_name, transaction_id, amount, username, trans_date){
+        try{
+            const check = await db.query(`
+            SELECT * FROM plaidtrans WHERE transaction_id = $1
+            `, [transaction_id])
+           
+            
+            if(check.rows[0] == null){
+                console.log("HEEEEEEEEEERRRRRRRRRRRRRRRREEEEEEEEEE")
+                const result = db.query(`
+                INSERT INTO plaidtrans ( transaction_name, transaction_id, amount, username, trans_date)
+                VALUES ($1, $2, $3, $4, $5)
+                `,[transaction_name, transaction_id, amount, username, trans_date])
+                return result
+            } else {
+                return check
+            }
+            
+        } catch(e){
+            console.log(e)
+        }
+    
+    }
+
+    static async getPlaidTrans(username){
+        const result = await db.query(`SELECT * FROM plaidtrans WHERE username = $1`,[username])
+        return result
+    
+    }
 
 
 

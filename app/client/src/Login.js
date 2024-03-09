@@ -1,6 +1,3 @@
-
-
-
 import { useState } from "react";
 
 function Login({login}) {
@@ -10,6 +7,7 @@ let INITIAL = {
     password: "",
 
 }
+localStorage.clear()
 
     let params = "login"
     const [formData, setFormData] = useState(INITIAL);
@@ -65,7 +63,7 @@ let INITIAL = {
                                     </div>
 
                                     <div>
-                                        <p className="mb-0">Don't have an account? <a href="#!" className="text-body fw-bold">Sign Up</a></p>
+                                        <p className="mb-0">Don't have an account? <a href="/register" className="text-body fw-bold">Sign Up</a></p>
                                     </div>
 
                                 </div>

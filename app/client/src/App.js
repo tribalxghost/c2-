@@ -30,25 +30,32 @@ function App() {
   const navigate = useNavigate()
 
 
-  async function getData() {
-    const res = await axios.get(`http://localhost:${PORT}/api`)
-    const { works } = res.data
-    setBackend(works)
-   
-  }
-
-  useEffect(() => {
-    getData()
-    
-  }, [])
 
 
-  let token = localStorage.getItem("token")
+
+
+
+
+
 
 
   async function sendData(formData, params) {
+    
+
     const result = await axios.post(`http://localhost:${PORT}/register/${params}`, { formData }
     ).then(res => { return res })
+    console.log(result)
+
+    if(result.data.redirect){
+      navigate("/login")
+    }
+
+    if( result.data !== false){
+      localStorage.setItem("username", formData.username)
+      localStorage.setItem("token", result.data.token)
+      navigate("/addgoal");
+      window.location.reload()
+    }
 
   }
 
@@ -56,8 +63,9 @@ function App() {
     const result = await axios.post(`http://localhost:${PORT}/login`, { formData }
     ).then(res => { return res })
     if (result.data !== false) {
-
+      console.log(result)
       let { username } = result.data.user
+      let token = result.data.token
       localStorage.clear()
       localStorage.setItem("username", username)
       localStorage.setItem("token", token)
@@ -79,6 +87,9 @@ function App() {
   async function addAccount(formData, params) {
     const result = await axios.post(`http://localhost:${PORT}/${params}`, { formData }
     ).then(res => { return res })
+    navigate("/user")
+    window.location.reload()
+
   }
 
 
@@ -100,7 +111,7 @@ function App() {
 
   return (
     <div className="App">
-      <WebRoutes login={login} sendData={sendData} addAccount={addAccount} addTransaction={addTransaction} backend={backend} port={PORT} updateGoal={updateGoal} deleteTransaction={deleteTransaction} />
+      <WebRoutes login={login} sendData={sendData} addAccount={addAccount} addTransaction={addTransaction} backend={backend} port={PORT} updateGoal={updateGoal} deleteTransaction={deleteTransaction}   />
     </div>
   );
 }

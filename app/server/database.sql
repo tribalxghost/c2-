@@ -6,10 +6,12 @@ DROP TABLE IF EXISTS users cascade;
 DROP TABLE IF EXISTS transactions cascade;
 DROP TABLE IF EXISTS account_types cascade;
 DROP TABLE IF EXISTS goals cascade;
+DROP TABLE IF EXISTS plaidapitokens;
+DROP TABLE IF EXISTS plaidtrans;
 
 
 CREATE TABLE users (
-    username text Primary Key ,
+    username text Primary KEY,
     firstname text NOT NULL,
     lastname text NOT NULL,
     password text NOT NULL,
@@ -43,9 +45,21 @@ CREATE TABLE goals (
 
 
 
-CREATE TABLE plaidApi (
-    username text Primary,
+CREATE TABLE plaidapitokens (
+    username text Primary KEY,
     access_token text,
     financial_institution text
 
-)
+);
+
+CREATE TABLE plaidtrans (
+    tran_id SERIAL PRIMARY KEY,
+    username text,
+    trans_date text,
+    transaction_name text,
+    transaction_id text,
+    amount DECIMAL
+
+);
+
+

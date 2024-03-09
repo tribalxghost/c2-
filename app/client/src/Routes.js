@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 import Home from "./Home"
 import Login from "./Login";
 import Register from "./Register"
@@ -15,8 +14,10 @@ import AddGoal from "./AddGoal"
 
 
 
-function WebRoutes({ sendData, port, addAccount, addTransaction, backend, updateGoal, deleteTransaction, login }) {
+function WebRoutes({ sendData, port, addAccount, addTransaction, backend, updateGoal, deleteTransaction, login, loginUser }) {
     let [loggedIn, setLogin] = useState(true)
+    let user = localStorage.getItem("username")
+    let navigate = useNavigate()
 
 
     return (
@@ -27,8 +28,8 @@ function WebRoutes({ sendData, port, addAccount, addTransaction, backend, update
                 <Route exact path="/login" element={<Login register={"login"} login={login} setlogin={setLogin} />}></Route>
                 <Route exact path="/register" element={<Register register={"register"} sendData={sendData} setlogin={setLogin} />}></Route>
                 <Route exact path="/home" element={<Home />}></Route>
-                <Route exact path="/user" element={<Userpage loggedin={loggedIn} port={port} addTransaction={addTransaction} sendData={sendData} backend={backend} updateGoal={updateGoal} deleteTransaction={deleteTransaction} />} />
-                <Route exact path="/addgoal" element={<AddGoal sendData={sendData} addAccount={addAccount} />} />
+                <Route exact path="/user" element={<Userpage loggedin={loggedIn} port={port} addTransaction={addTransaction} sendData={sendData} backend={backend} updateGoal={updateGoal} deleteTransaction={deleteTransaction} loginUser={loginUser}/>} />
+                <Route exact path="/addgoal" element={<AddGoal sendData={sendData} addAccount={addAccount} loginUser={loginUser} port={port}/>} />
                 <Route exact path="*" element={<Notfound />}></Route>
 
 

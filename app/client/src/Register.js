@@ -27,16 +27,14 @@ function Register({sendData}) {
               ...fData,
               [name]: value
             }));
-            console.log(formData)
+
           }
 
           function submitForm(event){
               event.preventDefault()
-              localStorage.clear()
-              localStorage.setItem("username",formData.username)
               sendData(formData,params )
-              navigate("/addgoal");
-
+              
+                
           }
         
 

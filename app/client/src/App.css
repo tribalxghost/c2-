@@ -1,3 +1,6 @@
+
+
+
 .intro {
   height: 100vh;
 }
@@ -13,8 +16,14 @@
 }
 
 
+.main{
+  position: relative;
+}
+
 .piggySign{
-  top: 120px;
-  right: 230px;
+  width: 100%;
+  height: 100%;
+  top: 5%;
+  right: -30%;
   position: absolute;
 }
