@@ -103,8 +103,7 @@ function PlaidAuth({publicToken}){
 
   return(
     <span>
-    {publicToken}
-    
+    Click add Transaction
     </span>
   )
 }

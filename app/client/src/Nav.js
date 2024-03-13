@@ -1,6 +1,8 @@
 
 
 function Nav() {
+    let username = localStorage.getItem("username")
+
     return (
         <nav className="navbar navbar-expand-lg  bg-dark ">
             <div className="container-fluid">
@@ -18,7 +20,7 @@ function Nav() {
                             <a className="nav-link text-light" href="/about">About</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-light" href="/login">Login</a>
+                            <a className="nav-link text-light" href="/login">{username ? "Logout":"Login"}</a>
                         </li>
 
                     </ul>
