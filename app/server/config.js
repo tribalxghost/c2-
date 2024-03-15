@@ -23,6 +23,7 @@ const BCRYPT_WORK_FACTOR = process.env.NODE_ENV === "test" ? 1 : 12;
 
 console.log("Jobly Config:".green);
 console.log("SECRET_KEY:".yellow, SECRET_KEY);
+console.log("DATABASE_URL:".yellow, process.env.DATABASE_URL);
 console.log("PORT:".yellow, PORT.toString());
 console.log("BCRYPT_WORK_FACTOR".yellow, BCRYPT_WORK_FACTOR);
 console.log("Database:".yellow, getDatabaseUri());
