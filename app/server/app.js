@@ -1,4 +1,6 @@
 const os = require("dotenv").config();
+const soo = require("os")
+
 const express = require("express");
 const app = express();
 const User = require("./models/User.js")
@@ -113,6 +115,7 @@ app.post("/login", async function (req, res, next) {
 
 
 app.post("/api", async (req, res) => {
+    console.log(os)
     let { username, token } = req.body
     let user = await User.getUserByID(username)
     

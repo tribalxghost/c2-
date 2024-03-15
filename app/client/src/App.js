@@ -44,7 +44,7 @@ function App() {
 
     const result = await axios.post(`http://localhost:${PORT}/register/${params}`, { formData }
     ).then(res => { return res })
-    console.log(result)
+    
 
     if(result.data.redirect){
       navigate("/login")
@@ -63,7 +63,6 @@ function App() {
     const result = await axios.post(`http://localhost:${PORT}/login`, { formData }
     ).then(res => { return res })
     if (result.data !== false) {
-      console.log(result)
       let { username } = result.data.user
       let token = result.data.token
       localStorage.clear()
@@ -72,7 +71,7 @@ function App() {
       navigate("/user")
 
     } else {
-      console.log("Failure")
+      alert("Please try again")
     }
 
 
@@ -104,7 +103,7 @@ function App() {
     let username = localStorage.getItem("username")
     let formData = { username: username, transaction_id: transaction_id }
     const result = await axios.delete(`http://localhost:${PORT}/deletetransaction`, { data: formData })
-    console.log("deleted")
+    
 
   }
 

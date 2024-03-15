@@ -18,7 +18,7 @@ let token = localStorage.getItem("token")
 
 
 
-
+//Add account information
 
 function AddGoal({ addAccount, port }) {
  
@@ -29,10 +29,12 @@ function AddGoal({ addAccount, port }) {
   let params = "addgoal"
 
 
+
+//Check if User Exists
+
   async function Check(username, token){
     
     let result = await axios.post(`http://localhost:${port}/check`, {data:{"username": username, "token":token}}).then(res => {return res.data.data})
-  console.log(result)
     if(result){
     setLogin(true)
   } else {
@@ -43,15 +45,15 @@ function AddGoal({ addAccount, port }) {
 
 
 useEffect(()=>{
-  
 
-    console.log(username, token)
     Check(username, token)
 
 },[tog])
 
 
   
+//Add account information to state
+
 
   const handleChange = evt => {
 
@@ -62,10 +64,17 @@ useEffect(()=>{
     }));
   }
 
+
+
+
+
+
   function submitForm(event) {
     event.preventDefault()
     Check()
     if(loggedIn){
+
+      //Send information to server then database
       addAccount(formData, params)
 
     }else {

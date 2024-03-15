@@ -18,6 +18,10 @@ function AddTransaction({ addTransaction, toggle, setTrans, reRenderPage }) {
 
 
     let params = "api"
+
+//Add user input to state
+
+
     const handleChange = evt => {
         const { name, value } = evt.target;
         setFormData(fData => ({
@@ -26,9 +30,15 @@ function AddTransaction({ addTransaction, toggle, setTrans, reRenderPage }) {
         }));
     }
 
+
+
+
     function submitForm(event) {
         event.preventDefault()
+        //Hide transaction form
         toggle()
+
+        //Add user info to database
         addTransaction(formData, params)
         setTrans(formData)
         reRenderPage()
