@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === "production") {
     user: "budgetdb_bkqh_user",
     port: 5432,
     password: process.env.PASS,
-    database: process.env.DATABASE_URL
+    database: process.env.DB
   });
 } else {
   db = new Client({
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
     user: "budgetdb_bkqh_user",
     port: 5432,
     password: process.env.PASS || "Christopher#0160",
-    database: process.env.DATABASE_URL 
+    database: process.env.DB 
   });
 }
 try{
