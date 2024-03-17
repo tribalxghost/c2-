@@ -19,7 +19,7 @@ import WebRoutes from "./Routes";
 // // 3 Get data from server
 
 
-const PORT = +process.env.PORT || 3001;
+const PORT = process.env.PORT || 10000;
 
 
 function App() {
