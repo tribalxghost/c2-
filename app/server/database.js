@@ -22,7 +22,11 @@ if (process.env.NODE_ENV === "production") {
     database: process.env.DATABASE_URL 
   });
 }
+try{
+  db.connect();
 
-db.connect();
+}catch(e){
+  console.log(e)
+}
 
 module.exports = db;
