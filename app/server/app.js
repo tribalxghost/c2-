@@ -37,6 +37,8 @@ const plaidClient = new PlaidApi(configuration)
 
 
 
+try{
+
 
 
 app.post("/usercheck",async function(req, res, next) {
@@ -426,7 +428,9 @@ app.post('/transactions/sync', async function (request, response) {
 })
 
 
-
+}catch(e){
+    console.log(e)
+}
 
 
 
