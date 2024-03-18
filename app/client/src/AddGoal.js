@@ -34,7 +34,7 @@ function AddGoal({ addAccount, port }) {
 
   async function Check(username, token){
     
-    let result = await axios.post(`http://localhost:${port}/check`, {data:{"username": username, "token":token}}).then(res => {return res.data.data})
+    let result = await axios.post(`https://the-budget-pig2.onrender.com/check`, {data:{"username": username, "token":token}}).then(res => {return res.data.data})
     if(result){
     setLogin(true)
   } else {

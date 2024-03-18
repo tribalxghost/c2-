@@ -42,7 +42,7 @@ function App() {
   async function sendData(formData, params) {
     
 
-    const result = await axios.post(`http://localhost:${PORT}/register/${params}`, { formData }
+    const result = await axios.post(`https://the-budget-pig2.onrender.comregister/${params}`, { formData }
     ).then(res => { return res })
     
 
@@ -60,7 +60,7 @@ function App() {
   }
 
   async function login(formData) {
-    const result = await axios.post(`http://localhost:${PORT}/login`, { formData }
+    const result = await axios.post(`https://the-budget-pig2.onrender.com/login`, { formData }
     ).then(res => { return res })
     if (result.data !== false) {
       let { username } = result.data.user
@@ -79,12 +79,12 @@ function App() {
 
 
   async function updateGoal(formData) {
-    const result = await axios.put(`http://localhost:${PORT}/updategoal`, { formData }).then(res => { return res })
+    const result = await axios.put(`https://the-budget-pig2.onrender.com/updategoal`, { formData }).then(res => { return res })
   }
 
 
   async function addAccount(formData, params) {
-    const result = await axios.post(`http://localhost:${PORT}/${params}`, { formData }
+    const result = await axios.post(`https://the-budget-pig2.onrender.com/${params}`, { formData }
     ).then(res => { return res })
     navigate("/user")
     window.location.reload()
@@ -94,7 +94,7 @@ function App() {
 
   async function addTransaction(formData) {
     let username = localStorage.getItem("username")
-    const result = await axios.post(`http://localhost:${PORT}/addtransaction`, { formData, username }
+    const result = await axios.post(`https://the-budget-pig2.onrender.com/addtransaction`, { formData, username }
     ).then(res => { return res })
   }
 
@@ -102,7 +102,7 @@ function App() {
   async function deleteTransaction(transaction_id) {
     let username = localStorage.getItem("username")
     let formData = { username: username, transaction_id: transaction_id }
-    const result = await axios.delete(`http://localhost:${PORT}/deletetransaction`, { data: formData })
+    const result = await axios.delete(`https://the-budget-pig2.onrender.com/deletetransaction`, { data: formData })
     
 
   }
