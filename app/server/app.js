@@ -165,7 +165,7 @@ app.post("/api", async (req, res) => {
             client_name: 'Plaid Test App',
             products: ['auth', 'transactions'],
             language: 'en',
-            redirect_uri: 'http://localhost:3001/',
+            redirect_uri: 'http://localhost:10000/',
             country_codes: ['US'],
             access_token: access_token.rows[0].access_token,
 
