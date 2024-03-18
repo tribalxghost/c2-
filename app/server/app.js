@@ -325,7 +325,7 @@ app.post('/create_link_token', async function (request, response, next) {
         client_name: 'Plaid Test App',
         products: ['auth', 'transactions'],
         language: 'en',
-        redirect_uri: 'http://localhost:3001/',
+        redirect_uri: 'http://localhost:10000/',
         country_codes: ['US'],
     };
     try {
