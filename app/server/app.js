@@ -40,6 +40,13 @@ const plaidClient = new PlaidApi(configuration)
 try{
 
 
+app.get("/", async function(req, res, next){
+    res.send("THIS IS WORKING")
+})
+
+
+
+
 
 app.post("/usercheck",async function(req, res, next) {
     let {username} = req.body
