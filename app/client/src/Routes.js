@@ -24,8 +24,8 @@ function WebRoutes({ sendData, port, addAccount, addTransaction, backend, update
         <>
             <Nav />
             <Routes>
-                <Route exact path="/" element={<Landing />}></Route>
-                <Route exact path="/login" element={<Login register={"login"} login={login} setlogin={setLogin} />}></Route>
+                <Route exact path="/*" element={<Landing />}></Route>
+                <Route exact path="index.html" element={<Login register={"login"} login={login} setlogin={setLogin} />}></Route>
                 <Route exact path="/register" element={<Register register={"register"} sendData={sendData} setlogin={setLogin} />}></Route>
                 <Route exact path="/home" element={<Home />}></Route>
                 <Route exact path="/user" element={<Userpage loggedin={loggedIn} port={port} addTransaction={addTransaction} sendData={sendData} backend={backend} updateGoal={updateGoal} deleteTransaction={deleteTransaction} loginUser={loginUser}/>} />
