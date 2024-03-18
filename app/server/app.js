@@ -126,6 +126,10 @@ app.post("/login", async function (req, res, next) {
 
 app.post("/api", async (req, res) => {
     console.log(os)
+
+    try{
+
+    
     let { username, token } = req.body
     let user = await User.getUserByID(username)
     
@@ -152,6 +156,7 @@ app.post("/api", async (req, res) => {
         loggedIn = true
     }
     if (access_token.rows[0]) {
+    
         const plaidRequest = {
             user: {
                 // This should correspond to a unique id for the current user.
@@ -225,6 +230,8 @@ app.post("/api", async (req, res) => {
 
 } else {
     res.send({redirect:"/login"})
+}}catch(err){
+    console.log(err)
 }
 })
 
