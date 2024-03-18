@@ -42,7 +42,7 @@ function App() {
   async function sendData(formData, params) {
     
 
-    const result = await axios.post(`https://the-budget-pig2.onrender.comregister/${params}`, { formData }
+    const result = await axios.post(`https://the-budget-pig2.onrender.com/register/${params}`, { formData }
     ).then(res => { return res })
     
 
