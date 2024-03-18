@@ -71,7 +71,7 @@ function Userpage({ port, addTransaction, updateGoal, deleteTransaction}) {
   async function getData() {
     let username = localStorage.getItem("username")
     let token = localStorage.getItem("token")
-    const res1 = await axios.post(`http://localhost:${port}/api`, { username, token }
+    const res1 = await axios.post(`https://the-budget-pig2.onrender.com/api`, { username, token }
     ).then(res => { setData(res.data) })
     
     return res1
@@ -85,11 +85,11 @@ function PlaidAuth({publicToken}){
   const [account, setAccount] = useState()
   useEffect(() => {
     async function fetchData(){
-      let accessToken = await axios.post(`http://localhost:${port}/exchange_public_token`, {public_token: publicToken, username:localStorage.getItem("username")})
+      let accessToken = await axios.post(`https://the-budget-pig2.onrender.com/exchange_public_token`, {public_token: publicToken, username:localStorage.getItem("username")})
       console.log("accessToken", accessToken.data)
-      const auth = await axios.post(`http://localhost:${port}/auth`, {access_token: accessToken.data.accessToken})
+      const auth = await axios.post(`https://the-budget-pig2.onrender.com/auth`, {access_token: accessToken.data.accessToken})
       console.log("auth data", auth.data)
-      const transactions = await axios.post(`http://localhost:${port}/transactions/sync`, {access_token: accessToken.data.accessToken})
+      const transactions = await axios.post(`https://the-budget-pig2.onrender.com/transactions/sync`, {access_token: accessToken.data.accessToken})
       console.log("TRANSACTIONS",transactions.data)
 
       setAccount(auth.data.numbers.ach[0]);
@@ -117,7 +117,7 @@ function PlaidAuth({publicToken}){
 useEffect(() => {
 
   async function getPlaid(){
-    const result = await axios.post(`http://localhost:${port}/create_link_token`, {username}).then(res => setLink(res.data.link_token))
+    const result = await axios.post(`https://the-budget-pig2.onrender.com/create_link_token`, {username}).then(res => setLink(res.data.link_token))
     console.log(result)
   }
 getPlaid()
