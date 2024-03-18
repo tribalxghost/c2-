@@ -50,7 +50,7 @@ app.get("/", async function(req, res, next){
 
 app.post("/usercheck",async function(req, res, next) {
     let {username} = req.body
-    let user = User.getUserByID(username)
+    let user = await User.getUserByID(username)
     if(user){
         res.send(user)
         res.send(true)
