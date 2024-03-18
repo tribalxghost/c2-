@@ -109,7 +109,7 @@ app.post("/login", async function (req, res, next) {
         }
 
     } catch (err) {
-        console.log(username)
+        console.log(err)
         return next()
     }
 
