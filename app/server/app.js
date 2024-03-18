@@ -52,7 +52,7 @@ app.post("/usercheck",async function(req, res, next) {
     let {username} = req.body
     let user = User.getUserByID(username)
     if(user){
-        res.send(user.username)
+        res.send(user)
         res.send(true)
     } else {
         res.send(false)
