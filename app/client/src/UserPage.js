@@ -29,7 +29,7 @@ function Userpage({ port, addTransaction, updateGoal, deleteTransaction}) {
   function del(event) {
     event.preventDefault()
     let transaction_id = event.currentTarget.dataset.user
-    console.log(transaction_id)
+    // console.log(transaction_id)
     deleteTransaction(transaction_id)
     reRenderPage()
 
@@ -86,11 +86,11 @@ function PlaidAuth({publicToken}){
   useEffect(() => {
     async function fetchData(){
       let accessToken = await axios.post(`https://the-budget-pig2.onrender.com/exchange_public_token`, {public_token: publicToken, username:localStorage.getItem("username")})
-      console.log("accessToken", accessToken.data)
+      // console.log("accessToken", accessToken.data)
       const auth = await axios.post(`https://the-budget-pig2.onrender.com/auth`, {access_token: accessToken.data.accessToken})
-      console.log("auth data", auth.data)
+      // console.log("auth data", auth.data)
       const transactions = await axios.post(`https://the-budget-pig2.onrender.com/transactions/sync`, {access_token: accessToken.data.accessToken})
-      console.log("TRANSACTIONS",transactions.data)
+      // console.log("TRANSACTIONS",transactions.data)
 
       setAccount(auth.data.numbers.ach[0]);
     }
@@ -118,7 +118,7 @@ useEffect(() => {
 
   async function getPlaid(){
     const result = await axios.post(`https://the-budget-pig2.onrender.com/create_link_token`, {username}).then(res => setLink(res.data.link_token))
-    console.log(result)
+    // console.log(result)
   }
 getPlaid()
 
@@ -135,7 +135,7 @@ const { open, ready } = usePlaidLink({
 });
 
 
-console.log(data)
+// console.log(data)
 
 
 
