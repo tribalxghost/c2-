@@ -1,6 +1,7 @@
 # THE BUDGET PIG
 ## Table
-- [Database Schema]((https://github.com/tribalxghost](https://drive.google.com/file/d/1tYkFUyEFbvtboWb6ZI13sMWPmy-bE2y8/view?usp=sharing))
+- [Installation](https://github.com/tribalxghost](https://drive.google.com/file/d/1tYkFUyEFbvtboWb6ZI13sMWPmy-bE2y8/view?usp=sharing)
+- [Database Schema]_(https://github.com/tribalxghost](https://drive.google.com/file/d/1tYkFUyEFbvtboWb6ZI13sMWPmy-bE2y8/view?usp=sharing)
 
 
 
