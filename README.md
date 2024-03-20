@@ -1,11 +1,26 @@
 # THE BUDGET PIG
+
+## URL
+- [The Budget Pig Website](https://c2-6bah.onrender.com/)
+
+
 ## Table
 - [Database Schema](https://drive.google.com/file/d/1tYkFUyEFbvtboWb6ZI13sMWPmy-bE2y8/view?usp=sharing)
 
-
+## Tech Stack
+- Postgres
+- React
+- Node
+- Express
 
 ## Description
 The Budget Pig is a user-friendly mobile application designed to help individuals manage their finances effectively. With intuitive features and a clean interface, Budget Buddy empowers users to track their expenses, set budgets, and achieve their financial goals effortlessly.
+
+## Features
+
+- Connect to plaid
+- Add transactions
+- Connect your bank account
 
 ## Table of Contents
 - [Installation](#installation)
@@ -25,7 +40,7 @@ The Budget Pig is a user-friendly mobile application designed to help individual
 4. Change directory to /client
 5. Type in npm start into the Ubuntu terminal
 
-## How to use app?
+## (User Flow) How to use app?
 
 1. Click Sign Up
 2. Add your information into the requested fields
