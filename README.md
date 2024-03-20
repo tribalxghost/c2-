@@ -1,4 +1,7 @@
 # THE BUDGET PIG
+##Table
+[tribalxghost]([link-to-table]([https://github.com/tribalxghost](https://drive.google.com/file/d/1tYkFUyEFbvtboWb6ZI13sMWPmy-bE2y8/view?usp=sharing)))
+
 
 ## Description
 The Budget Pig is a user-friendly mobile application designed to help individuals manage their finances effectively. With intuitive features and a clean interface, Budget Buddy empowers users to track their expenses, set budgets, and achieve their financial goals effortlessly.
