@@ -1,6 +1,6 @@
 
 
-\c budgetdb_bkqh
+\c budgetDB_test
 
 DROP TABLE IF EXISTS users cascade;
 DROP TABLE IF EXISTS transactions cascade;

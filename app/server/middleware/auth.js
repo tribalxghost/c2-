@@ -20,7 +20,7 @@ function authenticateJWT(req, res, next) {
     console.log(req.body.username)
     if(!req.body.username){
         const e = new ExpressError("Please login first!", 401)
-        
+        throw e 
     }else{
         
        return next() 

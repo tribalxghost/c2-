@@ -36,7 +36,7 @@ The Budget Pig is a user-friendly mobile application designed to help individual
 1. Click Connect Bank Account to use the plaid api
 2. Use Chime as example Institution
 3. Click continue
-4.  Click sign in
+4. Click sign in
 5. Click get code
 6. Click submit
 7. Select any account then click continue
@@ -44,6 +44,14 @@ The Budget Pig is a user-friendly mobile application designed to help individual
 9. Then click continue
 10. Add a transaction
 11. Done!
+
+## RUN TEST
+
+1. Run NPM install jest, supertest
+2. Change directories to the /server
+3. Run jest in ubuntu
+
+
 
 
 
