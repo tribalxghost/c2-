@@ -3,18 +3,6 @@
 ## Description
 The Budget Pig is a user-friendly mobile application designed to help individuals manage their finances effectively. With intuitive features and a clean interface, Budget Buddy empowers users to track their expenses, set budgets, and achieve their financial goals effortlessly.
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Configuration](#configuration)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [Credits](#credits)
-- [License](#license)
-- [Contact](#contact)
-- [Test](#test)
-
 ## Installation
 1. Clone app from github
 2. Download Unbutu
