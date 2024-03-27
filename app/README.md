@@ -13,7 +13,7 @@ The Budget Pig is a user-friendly mobile application designed to help individual
 - [Credits](#credits)
 - [License](#license)
 - [Contact](#contact)
-- [License](#test)
+- [Test](#test)
 
 ## Installation
 1. Clone app from github
